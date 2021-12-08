@@ -11,10 +11,12 @@ jobs:
         name: Call Azure Pipeline
         runs-on: self-hosted
         steps:
-        - name: Azure Pipelines Action
+        - name: trigger single Job
           if: github.event.pull_request.merged == true
-          uses: Azure/pipelines@v1
+          uses: JeroenBackxMvR/Jenkins@main
           with:
-            azure-devops-project-url: https://dev.azure.com/jeroenbackx/PipelineTest
-            azure-pipeline-name: 'PipelineTest-CI'
-            azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+          url: "http://localhost:8080/"
+          user: "Jeroen"
+          token: ${{ secrets.TOKEN }}
+          job: "Test"
+          
