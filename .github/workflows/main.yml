@@ -8,7 +8,7 @@ on:
       
 jobs:
     build:
-        name: Call Azure Pipeline
+        name: Call Jenkins Pipeline
         runs-on: self-hosted
         steps:
         - name: trigger single Job
