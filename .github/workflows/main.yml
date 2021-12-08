@@ -13,10 +13,10 @@ jobs:
         steps:
         - name: trigger single Job
           if: github.event.pull_request.merged == true
-          uses: JeroenBackxMvR/Jenkins@main
+          uses: appleboy/jenkins-action@master
           with:
-          url: "http://localhost:8080/"
-          user: "Jeroen"
-          token: ${{ secrets.TOKEN }}
-          job: "Test"
+           url: "http://localhost:8080/"
+           user: "Jeroen"
+           token: ${{ secrets.TOKEN }}
+           job: "Test"
           
