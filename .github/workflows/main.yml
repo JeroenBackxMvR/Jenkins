@@ -11,7 +11,7 @@ jobs:
         name: Call Jenkins Pipeline
         runs-on: self-hosted
         steps:
-        - name: trigger single Job
+        - name: 'trigger single Job'
           if: github.event.pull_request.merged == true
           uses: appleboy/jenkins-action@master
           with:
