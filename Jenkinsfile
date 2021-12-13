@@ -49,8 +49,8 @@ pipeline {
 	    credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
             filePath: '${WORKSPACE}/test.csv', 
             folderName: 'Default', 
-            orchestratorAddress: 'https://cloud.uipath.com/testjeroen/', 
-            orchestratorTenant: 'Default',
+	                orchestratorAddress: "${UIPATH_ORCH_URL}",
+	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
             traceLoggingLevel: 'None'
         ) 
 	            }
