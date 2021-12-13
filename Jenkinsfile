@@ -43,6 +43,16 @@ pipeline {
 	                      useOrchestrator: false,
 						  traceLevel: 'None'
 	        )
+			   UiPathAssets (
+            assetsAction: DeployAssets(), 
+	    //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
+	    credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+            filePath: '${WORKSPACE}/test.csv', 
+            folderName: 'Default', 
+            orchestratorAddress: 'https://cloud.uipath.com/testjeroen/', 
+            orchestratorTenant: 'Default',
+            traceLoggingLevel: 'None'
+        ) 
 	            }
 	        }
 	         // Test Stages
