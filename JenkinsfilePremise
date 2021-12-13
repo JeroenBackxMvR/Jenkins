@@ -43,7 +43,7 @@ pipeline {
 	                      useOrchestrator: false,
 						  traceLevel: 'None'
 	        )
-			  UiPathAssets 
+			  UiPathAssets (
 			assetsAction: DeployAssets(), 
 			credentials: UserPass('UiPath SSO'), 
 			filePath: "${workspace}@script/Test.csv",
