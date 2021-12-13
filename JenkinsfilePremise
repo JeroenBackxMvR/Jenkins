@@ -43,15 +43,15 @@ pipeline {
 	                      useOrchestrator: false,
 						  traceLevel: 'None'
 	        )
-			   UiPathAssets (
-            assetsAction: DeployAssets(), 
-	    //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	    credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
-	filePath: "${workspace}@script/Test.csv",
-            folderName: 'Default', 
-	                orchestratorAddress: "${UIPATH_ORCH_URL}",
-	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
-            traceLevel: 'None'
+			  UiPathAssets 
+			assetsAction: DeployAssets(), 
+			credentials: UserPass('UiPath SSO'), 
+			filePath: "${workspace}@script/Test.csv",
+			folderName: 'Default', 
+			orchestratorAddress: 'https://dev.uipath.inbcu.com/', 
+			orchestratorTenant: 'Cafe2-GRU', 
+			traceLevel: 'None'
+
         ) 
 	            }
 	        }
